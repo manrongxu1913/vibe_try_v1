@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>剂量计算器 | 一起磕盐</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="bg-orb orb-a"></div><div class="bg-orb orb-b"></div>
+    <header class="site-header"><a class="brand" href="index.html"><span class="brand-mark">盐</span><span><strong>一起磕盐</strong><small>Bio Research Planner</small></span></a><nav class="site-nav"><a class="nav-link" href="index.html">首页</a><a class="nav-link" href="tools.html">工具台（综合）</a><a class="nav-link active" href="dose.html">剂量计算器</a></nav></header>
+    <main class="dashboard">
+      <section id="dose" class="card full-span">
+        <div class="card-head"><h2>剂量计算器</h2><span class="badge">单位换算 + Buffer 配比</span></div>
+        <div class="tabs"><button class="tab-btn active" data-tab="convert">单位换算</button><button class="tab-btn" data-tab="buffer">Buffer 配比</button></div>
+        <div id="tab-convert" class="tab-content active">
+          <div class="grid-2"><input id="convert-value" type="number" placeholder="输入数值" value="1" /><select id="convert-category"><option value="mass">质量 (g/mg/ug/ng)</option><option value="volume">体积 (L/mL/uL)</option><option value="molar">浓度 (M/mM/uM/nM)</option></select><select id="convert-from"></select><select id="convert-to"></select></div>
+          <button id="convert-btn" class="primary">计算</button><p id="convert-output" class="result"></p>
+        </div>
+        <div id="tab-buffer" class="tab-content">
+          <form id="buffer-form">
+            <div class="grid-2"><input id="buffer-volume" type="number" min="1" placeholder="最终体积 (mL)" value="100" /><input id="buffer-name" type="text" placeholder="Buffer 名称，例如：TBST" /></div>
+            <div id="solutes"></div><button type="button" id="add-solute" class="ghost">+ 添加溶质</button><button type="submit" class="primary">生成配比</button>
+          </form>
+          <div id="buffer-output" class="result-block"></div>
+          <div class="result-block"><h3>最近配比记录</h3><div id="buffer-history" class="history-list"></div></div>
+        </div>
+      </section>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>黄历投稿建议 | 一起磕盐</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="bg-orb orb-a"></div><div class="bg-orb orb-b"></div>
+    <header class="site-header"><a class="brand" href="index.html"><span class="brand-mark">盐</span><span><strong>一起磕盐</strong><small>Bio Research Planner</small></span></a><nav class="site-nav"><a class="nav-link" href="index.html">首页</a><a class="nav-link" href="tools.html">工具台（综合）</a><a class="nav-link active" href="almanac.html">黄历投稿</a></nav></header>
+    <main class="dashboard">
+      <section id="almanac" class="card full-span">
+        <div class="card-head"><h2>黄历投稿建议</h2><span class="badge">API + 本地回退</span></div>
+        <form id="almanac-config" class="grid-2 compact-grid">
+          <select id="almanac-source"><option value="local">本地算法（默认）</option><option value="api">外部 API（需配置）</option></select>
+          <input id="almanac-api-url" type="url" placeholder="API URL，例如：https://example.com/almanac" />
+          <input id="almanac-api-key" type="text" placeholder="API Key（可选）" />
+          <button type="button" id="almanac-refresh">刷新今日建议</button>
+        </form>
+        <div id="almanac-panel" class="almanac-panel"><p class="muted">正在计算今日信息...</p></div>
+      </section>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>

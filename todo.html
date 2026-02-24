@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo List | 一起磕盐</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Outfit:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="bg-orb orb-a"></div><div class="bg-orb orb-b"></div>
+    <header class="site-header">
+      <a class="brand" href="index.html"><span class="brand-mark">盐</span><span><strong>一起磕盐</strong><small>Bio Research Planner</small></span></a>
+      <nav class="site-nav"><a class="nav-link" href="index.html">首页</a><a class="nav-link" href="tools.html">工具台（综合）</a><a class="nav-link active" href="todo.html">Todo List</a></nav>
+    </header>
+    <main class="dashboard">
+      <section id="todo" class="card full-span">
+        <div class="card-head"><h2>Todo List</h2><span class="badge">日历任务 + 倒数</span></div>
+        <div class="todo-planner">
+          <div class="calendar-panel">
+            <div class="calendar-head"><button type="button" id="todo-prev-month">上个月</button><strong id="todo-month-label"></strong><button type="button" id="todo-next-month">下个月</button></div>
+            <div class="week-header"><span>一</span><span>二</span><span>三</span><span>四</span><span>五</span><span>六</span><span>日</span></div>
+            <div id="todo-calendar" class="calendar-grid"></div>
+          </div>
+          <aside id="plan-panel" class="plan-panel plan-month">
+            <div class="plan-head"><h3 id="plan-title">月计划</h3><button type="button" id="plan-back" class="ghost" hidden>返回月计划</button></div>
+            <form id="plan-form" class="inline-form"><input id="plan-input" type="text" placeholder="添加计划任务" required /><button type="submit">添加</button></form>
+            <ul id="plan-list" class="todo-list"></ul>
+          </aside>
+        </div>
+        <div class="result-block">
+          <h3>时间节点倒数</h3>
+          <form id="countdown-form" class="grid-2"><input id="countdown-name" type="text" placeholder="节点名称（如：基金截止）" required /><input id="countdown-time" type="datetime-local" required /><button type="submit">添加节点</button></form>
+          <div id="countdown-list" class="history-list"></div>
+        </div>
+      </section>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
